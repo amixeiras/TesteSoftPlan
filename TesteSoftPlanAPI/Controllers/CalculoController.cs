@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TesteSoftPlanAPI.Controllers
 {
+    //Caminho da API
     [Route("api/calculo")]
     [ApiController]
     public class CalculoController : ControllerBase
