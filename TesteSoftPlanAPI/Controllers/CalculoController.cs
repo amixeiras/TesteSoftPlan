@@ -39,6 +39,11 @@ namespace TesteSoftPlanAPI.Controllers
             return Math.Truncate(100 * result) / 100;
         }
 
-        
+        [HttpGet]
+        [Route("showmethecode")]
+        public ActionResult<string> GetUrlProject()
+        {
+            return "https://github.com/amixeiras/TesteSoftPlan";
+        }
     }
 }

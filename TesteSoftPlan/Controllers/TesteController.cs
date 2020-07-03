@@ -23,6 +23,7 @@ namespace TesteSoftPlan.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.LinkProjeto = GetUrlProjetoGitHub();
             return View();
         }
 
@@ -69,9 +70,6 @@ namespace TesteSoftPlan.Controllers
                 else
                     obj = new { data = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result).Replace(".", ","), erro = "" };
 
-
-
-
                 return new JsonResult(obj);
             }
         }
@@ -82,6 +80,31 @@ namespace TesteSoftPlan.Controllers
             var content = new StringContent(data, Encoding.UTF8, "application/json");
 
             return content;
+        }
+
+        private string GetUrlProjetoGitHub()
+        {
+            try
+            {
+
+                using (var client = new TesteSfotPlanClient(_config))
+                {
+                    var link = client.Client.GetAsync(rotaApi + "showmethecode").Result;
+
+                    if (link.IsSuccessStatusCode)
+                    {
+                        return JsonConvert.DeserializeObject<string>(link.Content.ReadAsStringAsync().Result);
+                    }
+
+                    return string.Empty;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return "";
+            }
         }
     }
 }
