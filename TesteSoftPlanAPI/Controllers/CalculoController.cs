@@ -25,12 +25,17 @@ namespace TesteSoftPlanAPI.Controllers
         public ActionResult<decimal> CalcularJuros(decimal valorinicial, int meses)
         {
             var taxa = TaxaJuros().Value;
-            taxa += 1; 
-            double taxaMensal = Math.Pow(Convert.ToDouble(taxa), meses);
+            taxa += 1;
+            decimal taxaMensal = 1;
 
-            var result = valorinicial * Convert.ToDecimal(taxaMensal);
+            for (int i = 0; i < meses; i++)
+            {
+                taxaMensal *= taxa;
+            }
 
-            return Math.Truncate(result);
+            var result = valorinicial * taxaMensal;
+
+            return Math.Truncate(100 * result) / 100;
         }
 
         
