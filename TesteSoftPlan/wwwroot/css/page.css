@@ -1,0 +1,17 @@
+﻿input {
+    width:100%;
+}
+
+input[type=button] {
+    width: 50%;
+    text-align:center;
+}
+
+#resultado{
+    display: none;
+    margin-top: 10px;
+}
+
+div.row{
+    margin-top: 10px;
+}

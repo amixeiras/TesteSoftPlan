@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/page.css" />
+
+
+<h2>Teste Softplan</h2>
+
+<div class="row">
+    <div class="form-group">
+        <div class="col-md-4 col-sm-4">
+            <label for="txtTaxaJuros">Taxa de Juros</label>
+            <input type="text" id="txtTaxaJuros" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12 col-sm-12">
+            <label><b><h3>Calcula Juros</h3></b></label>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <label>Valor Inicial</label>
+            <input type="text" id="txtValorInicial" class="form-control" data-inputmask="'alias': 'decimalLine'" />
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <label>Tempo</label>
+            <input type="text" id="txtMeses" class="form-control" data-inputmask="'alias': 'integerline'"/>
+            <small id="temopHelp" class="form-text text-muted">Inclua a quantidade de meses.</small>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <div class="col-md-4 col-sm-4">
+            <input type="button" id="btnCalcular" value="Calcular" class="btn btn-primary btn-sm" />
+        </div>
+    </div>
+</div>
+<div class="row" id="resultado">
+    <div class="form-group">
+        <div class="col-md-4 col-sm-4">
+            <label>Resultado</label>
+            <input type="text" id="txtResultado" class="form-control" readonly data-inputmask="'alias': 'decimalLine'"/>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/js/page.js"></script>
+

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteSoftPlan", "TesteSoftPlan\TesteSoftPlan.csproj", "{633CE66F-6B80-4221-8B0D-8530BF0873FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B843B040-B696-4048-9457-7D0F807C3125} = {B843B040-B696-4048-9457-7D0F807C3125}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteSoftPlanAPI", "TesteSoftPlanAPI\TesteSoftPlanAPI.csproj", "{B843B040-B696-4048-9457-7D0F807C3125}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{633CE66F-6B80-4221-8B0D-8530BF0873FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633CE66F-6B80-4221-8B0D-8530BF0873FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633CE66F-6B80-4221-8B0D-8530BF0873FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633CE66F-6B80-4221-8B0D-8530BF0873FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B843B040-B696-4048-9457-7D0F807C3125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B843B040-B696-4048-9457-7D0F807C3125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B843B040-B696-4048-9457-7D0F807C3125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B843B040-B696-4048-9457-7D0F807C3125}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29CF0F0F-172B-4DC6-8950-23E01F54C1BC}
+	EndGlobalSection
+EndGlobal
