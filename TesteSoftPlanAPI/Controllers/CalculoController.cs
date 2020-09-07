@@ -2,22 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dominio.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TesteSoftPlanAPI.Controllers
 {
+
     //Caminho da API
     [Route("api/calculo")]
     [ApiController]
     public class CalculoController : ControllerBase
     {
+        private readonly IService iService;
+
+        public CalculoController(IService service) =>
+            iService = service;
 
         // GET api/values
         [HttpGet]
         [Route("taxajuros")]
         public ActionResult<decimal> TaxaJuros()
         {
-            return 0.01M;
+            try
+            {
+                return iService.TaxaJuros();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+
         }
 
         // POST api/values
@@ -25,25 +39,28 @@ namespace TesteSoftPlanAPI.Controllers
         [Route("calculajuros")]
         public ActionResult<decimal> CalcularJuros(decimal valorinicial, int meses)
         {
-            var taxa = TaxaJuros().Value;
-            taxa += 1;
-            decimal taxaMensal = 1;
-
-            for (int i = 0; i < meses; i++)
+            try
             {
-                taxaMensal *= taxa;
+                return iService.Calculo(valorinicial, meses);
             }
-
-            var result = valorinicial * taxaMensal;
-
-            return Math.Truncate(100 * result) / 100;
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         [HttpGet]
         [Route("showmethecode")]
         public ActionResult<string> GetUrlProject()
         {
-            return "https://github.com/amixeiras/TesteSoftPlan";
+            try
+            {
+                return iService.GetUrlProject();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
     }
 }
